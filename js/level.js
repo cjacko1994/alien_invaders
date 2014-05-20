@@ -57,7 +57,7 @@
   }
 //change the audio below
   $(function() {
-    GameAudio.load({ 'fire' : 'media/laser.ogg', 'die' : 'media/explosion.ogg' }, 
+    GameAudio.load({ 'fire' : 'media/flappywing.wav', 'die' : 'media/flappypoint.wav' }, 
                    function() { 
                        Game.initialize("#gameboard", levelData, spriteData,
                                       { "start": startGame,
