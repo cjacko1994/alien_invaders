@@ -1,9 +1,9 @@
 
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
-  this.dx = 10; this.dy = 0;
+  this.dx = 3; this.dy = 0;
   this.hit = 1; this.lastHit = 0;
-  this.speed = 10;
+  this.speed = 3;
 
   this.draw = function() {};
 
@@ -114,7 +114,7 @@ Player.prototype.step = function(dt) {
                           this.y-this.h,
                           { dy: -100, player: true });
     this.board.missiles++;
-    this.reloading = 10;
+    this.reloading = 3;
   }
   return true;
 }
