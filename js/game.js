@@ -15,6 +15,7 @@ var AlienFlock = function AlienFlock() {
     }
   }
 
+   
   this.step = function(dt) { 
     if(this.hit && this.hit != this.lastHit) {
       this.lastHit = this.hit;
@@ -41,9 +42,6 @@ var AlienFlock = function AlienFlock() {
   };
 
 }
-
-
-
 var Alien = function Alien(opts) {
   this.flock = opts['flock'];
   this.frame = 0;

@@ -40,6 +40,10 @@
     Game.loop();
   }
 
+var snd = new Audio("09 - Beyond.mp3"); // buffers automatically when created
+snd.play();
+
+
   function endGame() {
     var screen = new GameScreen("Game Over","(press space to restart)",
                                  function() {
