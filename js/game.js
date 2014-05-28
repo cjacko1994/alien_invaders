@@ -58,6 +58,8 @@ Alien.prototype.die = function() {
   this.board.remove(this);
 }
 
+
+
 Alien.prototype.step = function(dt) {
   this.mx += dt * this.flock.dx;
   this.y += this.flock.dy;
@@ -94,6 +96,8 @@ Player.prototype.draw = function(canvas) {
 Player.prototype.die = function() {
   GameAudio.play('die');
   Game.callbacks['die']();
+    
+    
 }
 
 Player.prototype.step = function(dt) {
