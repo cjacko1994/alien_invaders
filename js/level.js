@@ -54,7 +54,7 @@
     Game.loop();
   }
 
-var snd = new Audio("09 - Beyond.mp3"); // buffers automatically when created
+var snd = new Audio("Beyond-Remix.mp3"); // buffers automatically when game is loaded
 snd.play();
 
 
