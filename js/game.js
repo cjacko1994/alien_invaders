@@ -1,3 +1,4 @@
+var score =0;
 
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
@@ -6,7 +7,6 @@ var AlienFlock = function AlienFlock() {
   this.speed = 10;
 
   this.draw = function() {};
-
   this.die = function() {
     if(Game.board.nextLevel()) {
       Game.loadBoard(new GameBoard(Game.board.nextLevel())); 
@@ -14,8 +14,8 @@ var AlienFlock = function AlienFlock() {
       Game.callbacks['win']();
     }
   }
-
-   
+  
+    
   this.step = function(dt) { 
     if(this.hit && this.hit != this.lastHit) {
       this.lastHit = this.hit;
@@ -50,15 +50,16 @@ var Alien = function Alien(opts) {
 
 Alien.prototype.draw = function(canvas) {
   Sprites.draw(canvas,this.name,this.x,this.y,this.frame);
+    
 }
 
 Alien.prototype.die = function() {
   GameAudio.play('die');
   this.flock.speed += 1;
   this.board.remove(this);
+  score++;
+ 
 }
-
-
 
 Alien.prototype.step = function(dt) {
   this.mx += dt * this.flock.dx;
@@ -96,9 +97,9 @@ Player.prototype.draw = function(canvas) {
 Player.prototype.die = function() {
   GameAudio.play('die');
   Game.callbacks['die']();
-    
-    
+    score = 0;
 }
+
 
 Player.prototype.step = function(dt) {
   if(Game.keys['left']) { this.x -= 400 * dt; }
@@ -132,6 +133,7 @@ Missile.prototype.draw = function(canvas) {
 }
 
 Missile.prototype.step = function(dt) {
+    
    this.y += this.dy * dt * 4;
 //multiplied by 4
    var enemy = this.board.collide(this);
@@ -146,4 +148,5 @@ Missile.prototype.die = function() {
   if(this.player) this.board.missiles--;
   if(this.board.missiles < 0) this.board.missiles=0;
    this.board.remove(this);
+    
 }

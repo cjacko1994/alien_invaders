@@ -46,7 +46,7 @@
   }
 
   function startGame() {
-    var screen = new GameScreen("Galaxy Wars","press space to begin your mission, good luck",
+    var screen = new GameScreen("Galaxy Wars","press space bar to begin your mission, good luck",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
@@ -59,7 +59,7 @@ snd.play();
 
 
   function endGame() {
-    var screen = new GameScreen("Game Over","(press space to restart)",
+    var screen = new GameScreen("Crictical Damage","(press space bar to restart)",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
@@ -68,7 +68,7 @@ snd.play();
 
 
   function winGame() {
-    var screen = new GameScreen("You Win!","(press space to restart)",
+    var screen = new GameScreen("Mission Complete","(press space bar to restart)",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });

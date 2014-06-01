@@ -10,6 +10,8 @@ var Game = new function() {
     this.height= $(this.canvas_elem).attr('height');
 
     $(window).keydown(function(event) {
+        
+        
       if(KEY_CODES[event.keyCode]) Game.keys[KEY_CODES[event.keyCode]] = true;
     });
 
@@ -53,6 +55,7 @@ var Sprites = new function() {
 var GameScreen = function GameScreen(text,text2,callback) {
   this.step = function(dt) {
     if(Game.keys['fire'] && callback) callback();
+    
   };
 
   this.render = function(canvas) {
@@ -75,7 +78,7 @@ var GameBoard = function GameBoard(level_number) {
 
   this.add =    function(obj) { obj.board=this; this.objects.push(obj); return obj; };
   this.remove = function(obj) { this.removed_objs.push(obj); };
-
+ 
   this.addSprite = function(name,x,y,opts) {
     var sprite = this.add(new Sprites.map[name].cls(opts));
     sprite.name = name;

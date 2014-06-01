@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Alien Invaders</title>
+  <title>Galaxy Wars</title>
   <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'></script>
   <script src='js/engine.js'></script>
   <script src='js/game.js'></script>
@@ -10,12 +10,34 @@
 
   <style>
       #gameboard { background:url(http://1.bp.blogspot.com/--MYZKShAy5Q/UzR4loQXAoI/AAAAAAAAAnw/YZqPFaQJvmU/s1600/2666360_90x90.png);background-size: contain; }
-      #gameboard2 { background:url(http://www.thatsreallypossible.com/wp-content/uploads/2012/02/Space.jpg);background-size: contain; }
       #game-wrapper { margin:0 auto; width: 700px; }
+      .score {
+				position: absolute;
+				top: 20px;
+				right: 600px;
+				color: #dfaa65;
+				font-family: Helvetica, sans-serif;
+				cursor: default;
+			}
   </style>
 </head>
 <body>
   <div id='game-wrapper'>
+      
+      <script langauge="javascript">  
+          
+            window.setInterval("revampDiv()", 100);  
+            function revampDiv(){ 
+                
+                document.getElementById("score").innerHTML = "KILLS: " + score;  
+            }  
+			          
+     </script> 
+      
+<div class="score"> <span id="score"></span></div>
+
+</div>
+
     <canvas id='gameboard' width='700' height='700'></canvas>
   </div>
 </body>
