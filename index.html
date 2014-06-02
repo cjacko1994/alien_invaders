@@ -13,12 +13,21 @@
       #game-wrapper { margin:0 auto; width: 700px; }
       .score {
 				position: absolute;
-				top: 20px;
+				top: 30px;
 				right: 600px;
 				color: #dfaa65;
 				font-family: Helvetica, sans-serif;
 				cursor: default;
 			}
+       .life {
+				position: absolute;
+				top: 30px;
+				left: 40px;
+				color: #dfaa65;
+				font-family: Helvetica, sans-serif;
+				cursor: default;
+			}
+      
   </style>
 </head>
 <body>
@@ -30,12 +39,13 @@
             function revampDiv(){ 
                 
                 document.getElementById("score").innerHTML = "KILLS: " + score;  
+                document.getElementById("life").innerHTML = "LIVES: " + life;  
             }  
 			          
      </script> 
       
 <div class="score"> <span id="score"></span></div>
-
+<div class="life"> <span id="life"></span></div>
 </div>
 
     <canvas id='gameboard' width='700' height='700'></canvas>

@@ -59,7 +59,7 @@ snd.play();
 
 
   function endGame() {
-    var screen = new GameScreen("Crictical Damage","(press space bar to restart)",
+    var screen = new GameScreen("Crictical Damage","press space bar to restart",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });
@@ -68,7 +68,7 @@ snd.play();
 
 
   function winGame() {
-    var screen = new GameScreen("Mission Complete","(press space bar to restart)",
+    var screen = new GameScreen("Mission Complete","press space bar to restart",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
                                  });

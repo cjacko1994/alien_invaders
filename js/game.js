@@ -1,4 +1,5 @@
 var score =0;
+var life = 3; 
 
 var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
@@ -15,7 +16,6 @@ var AlienFlock = function AlienFlock() {
     }
   }
   
-    
   this.step = function(dt) { 
     if(this.hit && this.hit != this.lastHit) {
       this.lastHit = this.hit;
@@ -96,8 +96,15 @@ Player.prototype.draw = function(canvas) {
 
 Player.prototype.die = function() {
   GameAudio.play('die');
+    life--;
+  console.log(life);
+    this.board.score--;
+	if(life==0){
   Game.callbacks['die']();
     score = 0;
+    life--;
+    life = 3;
+}
 }
 
 
