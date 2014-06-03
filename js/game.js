@@ -16,6 +16,7 @@ var AlienFlock = function AlienFlock() {
     }
   }
   
+  
   this.step = function(dt) { 
     if(this.hit && this.hit != this.lastHit) {
       this.lastHit = this.hit;
@@ -58,8 +59,10 @@ Alien.prototype.die = function() {
   this.flock.speed += 1;
   this.board.remove(this);
   score++;
- 
+
+
 }
+
 
 Alien.prototype.step = function(dt) {
   this.mx += dt * this.flock.dx;
@@ -116,7 +119,11 @@ Player.prototype.step = function(dt) {
   if(this.x > Game.width-this.w) this.x = Game.width-this.w;
 
   this.reloading--;
-
+var enemy = this.board.collide(this);
+   if(enemy) { 
+     enemy.die();
+     return false;
+   }
   if(Game.keys['fire'] && this.reloading <= 0 && this.board.missiles < 3) {
     GameAudio.play('fire');
     this.board.addSprite('missile2',
@@ -147,8 +154,10 @@ Missile.prototype.step = function(dt) {
    if(enemy) { 
      enemy.die();
      return false;
+       
    }
    return (this.y < 0 || this.y > Game.height) ? false : true;
+    
 }
 
 Missile.prototype.die = function() {
@@ -157,3 +166,4 @@ Missile.prototype.die = function() {
    this.board.remove(this);
     
 }
+

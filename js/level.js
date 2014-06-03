@@ -46,6 +46,7 @@
   }
 
   function startGame() {
+      
     var screen = new GameScreen("Galaxy Wars","press space bar to begin your mission, good luck",
                                  function() {
                                      Game.loadBoard(new GameBoard(1));
