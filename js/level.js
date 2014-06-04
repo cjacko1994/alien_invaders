@@ -44,6 +44,7 @@
     'missile': { sx: 104,  sy: 91, w: 4,  h: 14, cls: Missile } ,
     'missile2': { sx: 124,  sy: 84, w: 10,  h: 14, cls: Missile }
   }
+  
 
   function startGame() {
       

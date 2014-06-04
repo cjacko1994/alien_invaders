@@ -5,7 +5,7 @@ var AlienFlock = function AlienFlock() {
   this.invulnrable = true;
   this.dx = 10; this.dy = 0;
   this.hit = 1; this.lastHit = 0;
-  this.speed = 10;
+  this.speed = 7;
 
   this.draw = function() {};
   this.die = function() {
@@ -96,7 +96,6 @@ Player.prototype.draw = function(canvas) {
    Sprites.draw(canvas,'player',this.x,this.y);
 }
 
-
 Player.prototype.die = function() {
   GameAudio.play('die');
     life--;
@@ -105,7 +104,6 @@ Player.prototype.die = function() {
 	if(life==0){
   Game.callbacks['die']();
     score = 0;
-    life--;
     life = 3;
 }
 }
