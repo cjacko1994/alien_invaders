@@ -60,7 +60,7 @@ var GameScreen = function GameScreen(text,text2,callback) {
 
   this.render = function(canvas) {
     canvas.clearRect(0,0,Game.width,Game.height);
-    canvas.font = "bold 50px Vector Battle";
+    canvas.font = "bold 50px Letter PT Serif Caption";
     var measure = canvas.measureText(text);  
     canvas.fillStyle = "dfaa65";
     canvas.fillText(text,Game.width/2 - measure.width/2,Game.height/2);
